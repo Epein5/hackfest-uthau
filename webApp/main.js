@@ -14,23 +14,38 @@ window.onload = function () {
             zoom: 14
         });
 
+        // Define the bus icon
         var busIcon = L.icon({
             iconUrl: '/home/raichu/Desktop/hackfest-uthau/webApp/imageFiles/busIcon.png',
             iconSize: [95, 50],
             iconAnchor: [25, 25],
             popupAnchor: [0, -25],
-            
         });
 
-        var myResponse = L.marker(latLng, { icon: busIcon }, true).addTo(map);
+        var myResponse = L.marker(latLng, { icon: busIcon }).addTo(map);
+
+        // Add a click event listener to the busIcon marker
         myResponse.on('click', iconClick);
-        
-    };
+
+        // Hide the navbar initially
+        const navbar = document.getElementById('navbar');
+        navbar.style.right = '-250px';
+    }
 
     function iconClick() {
         console.log("aayushGay");
 
-    };
+        const navbar = document.getElementById('navbar');
+        const icon = document.getElementById('busIcon');
 
-    
+        // Toggle the class on the busIcon element (if needed)
+        // icon.classList.toggle('show');
+
+        // Toggle the visibility of the navbar by changing its right position
+        if (navbar.style.right === '0px') {
+            navbar.style.right = '-250px';
+        } else {
+            navbar.style.right = '0px';
+        }
+    }
 }
