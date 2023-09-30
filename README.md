@@ -12,3 +12,6 @@ We intend to improve public transportation in Nepal using AI. We are aware of th
 - Realtime Bus Tracking
 - Mobile Application for User
 - Web Based Admin Dashboard
+
+### Face Recognition
+  We are using the power of DeepFace for facial recognition. Deepface is a lightweight face recognition and facial attribute analysis (age, gender, emotion, and race) framework for Python. It is a hybrid face recognition framework wrapping state-of-the-art models: VGG-Face, Google FaceNet, OpenFace, Facebook DeepFace, DeepID, ArcFace, Dlib, and SFace. We are going to use a camera at the entrance and the exit of the bus. When the Passenger comes to the entrance, they will have their photo taken and the photo is stored in the database, the picture is turned into a face embedding using a DeepFace model. Then at the exit, the picture is taken using the camera at the exit, the face embedding is calculated of the image at the exit and it is compared with other embeddings in the database. If the distance is very low, it'll recognize that person.
