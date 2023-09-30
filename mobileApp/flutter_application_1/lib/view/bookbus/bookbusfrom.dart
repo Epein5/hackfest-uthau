@@ -41,9 +41,10 @@ class _BusSearchScreenState extends State<BusSearchPage> {
               child: Text(
                 'Search Buses',
                 style: TextStyle(
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.green),
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(225, 0, 187, 134),
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -52,7 +53,10 @@ class _BusSearchScreenState extends State<BusSearchPage> {
               decoration: const InputDecoration(
                 labelText: 'From',
                 border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.location_on, color: Colors.green),
+                prefixIcon: Icon(
+                  Icons.location_on,
+                  color: Color.fromARGB(225, 0, 187, 134),
+                ),
               ),
             ),
             const SizedBox(height: 10),
@@ -61,25 +65,36 @@ class _BusSearchScreenState extends State<BusSearchPage> {
               decoration: const InputDecoration(
                 labelText: 'To',
                 border: OutlineInputBorder(),
-                prefixIcon: Icon(Icons.location_on, color: Colors.green),
+                prefixIcon: Icon(
+                  Icons.location_on,
+                  color: Color.fromARGB(225, 0, 187, 134),
+                ),
               ),
             ),
             const SizedBox(height: 10),
             Row(
               children: <Widget>[
-                const Icon(Icons.date_range, color: Colors.green),
+                const Icon(
+                  Icons.date_range,
+                  color: Color.fromARGB(225, 0, 187, 134),
+                ),
                 const SizedBox(width: 10),
-                const Text('Select Date:', style: TextStyle(color: Colors.green)),
+                const Text('Select Date:',
+                    style: TextStyle(
+                      color: Color.fromARGB(225, 0, 187, 134),
+                    )),
                 const SizedBox(width: 10),
                 ElevatedButton(
                   onPressed: () {
                     _selectDate(context);
                   },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(225, 0, 187, 134),
+                  ),
                   child: Text(
                     _selectedDate != null ? '$_selectedDate' : 'Pick Date',
                     style: const TextStyle(color: Colors.white),
                   ),
-                  style: ElevatedButton.styleFrom(primary: Colors.green),
                 ),
               ],
             ),
@@ -88,8 +103,11 @@ class _BusSearchScreenState extends State<BusSearchPage> {
               onPressed: () {
                 _searchBuses();
               },
-              child: const Text('Search', style: TextStyle(color: Colors.white)),
-              style: ElevatedButton.styleFrom(primary: Colors.green),
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(225, 0, 187, 134),
+              ),
+              child:
+                  const Text('Search', style: TextStyle(color: Colors.white)),
             ),
             const Divider(color: Colors.green),
             Expanded(
@@ -112,19 +130,25 @@ class _BusSearchScreenState extends State<BusSearchPage> {
                         elevation: 4,
                         child: ListTile(
                           shape: RoundedRectangleBorder(
-                            side: const BorderSide(color: Colors.green),
+                            side: const BorderSide(
+                              color: Color.fromARGB(225, 0, 187, 134),
+                            ),
                             borderRadius: BorderRadius.circular(12),
                           ),
                           contentPadding: const EdgeInsets.all(16),
-                          leading:
-                              const Icon(Icons.directions_bus, color: Colors.green),
+                          leading: const Icon(
+                            Icons.directions_bus,
+                            color: Color.fromARGB(225, 0, 187, 134),
+                          ),
                           title: Text('Bus Number: ${bus.busNumber}',
                               style: const TextStyle(
                                   color: Colors.green,
                                   fontWeight: FontWeight.bold)),
                           subtitle: Text(
                               'Route: ${bus.route}\nFare: Rs ${bus.fare.toString()}',
-                              style: const TextStyle(color: Colors.green)),
+                              style: const TextStyle(
+                                color: Color.fromARGB(225, 0, 187, 134),
+                              )),
                         ),
                       ),
                     ),

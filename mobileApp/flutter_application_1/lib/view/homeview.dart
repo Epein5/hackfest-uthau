@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/onboarding/mapscreen.dart';
 import 'package:flutter_application_1/resources/components/boxes.dart';
 import 'package:flutter_application_1/utils/routes/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
