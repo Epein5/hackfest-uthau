@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "518700908647",
+    "project_id": "ku-hackfeast",
+    "storage_bucket": "ku-hackfeast.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518700908647:android:8ea4180652760a3a37d4c2",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5GEnk9mmfeXL4ozdvVWa7SPUTaptBkhg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
