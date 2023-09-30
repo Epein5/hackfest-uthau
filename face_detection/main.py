@@ -3,9 +3,11 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from face_detection import prediction
+from fairCalc import valley, longDis
 
-class image(BaseModel):
-    img: float
+class fair(BaseModel):
+    id: int
+    distance: float
 
 
 
@@ -27,3 +29,20 @@ async def detect_face():
     name = prediction()
     
     return JSONResponse(name)
+
+@app.post("/long-fair")
+async def long_fair(user: fair):
+    user_id = user.id
+    user_distance = user.distance
+
+    total_cost = longDis(user_distance)
+    return JSONResponse(total_cost)
+
+
+@app.post("valley-fair")
+async def vally_fair(user: fair):
+    user_id = user.id
+    user_distance = user.distance
+
+    total_cost = valley(user_distance)
+    return JSONResponse(total_cost)

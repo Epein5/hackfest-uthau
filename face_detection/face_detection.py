@@ -6,8 +6,6 @@ tf.get_logger().setLevel('ERROR')
 import pathlib
 import cv2
 import numpy as np
-import requests
-import PIL
 from PIL import Image
 from face_recognition import recognize_face
 import time
@@ -16,10 +14,10 @@ from object_detection.utils import ops as utils_ops
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 
-model = tf.saved_model.load('/home/raichu/Desktop/deployment/my_model/saved_model')
+model = tf.saved_model.load('my_model/saved_model')
 
 # List of the strings that is used to add correct label for each box.
-PATH_TO_LABELS = '/home/raichu/Desktop/deployment/label_map.pbtxt'
+PATH_TO_LABELS = 'label_map.pbtxt'
 category_index = label_map_util.create_category_index_from_labelmap(PATH_TO_LABELS, use_display_name=True)
 
 def run_inference_for_single_image(model, image):
@@ -74,18 +72,16 @@ def prediction():
   while video.isOpened():
       ret, frame = video.read()
       frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+      cv2.imshow('frame',frame)
 
       if ret:
           frame = vid_predict(model, frame)
           if frame is not None:
-              # image = Image.fromarray(frame)
-              # image.save("output_image.jpg")
+              image = Image.fromarray(frame)
+              image.save("images/output_image.jpg")
               data = recognize_face(frame)
-              time.sleep(5)
-  # Release the video object and close the display windows
-  video.release()
-  cv2.destroyAllWindows()
-  return data
-
+              video.release()
+              cv2.destroyAllWindows()
+              return data
 
     

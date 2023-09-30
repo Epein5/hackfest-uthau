@@ -8,8 +8,8 @@ def recognize_face(frame):
     
     else:
 
-        dirs = os.listdir('/home/raichu/Desktop/deployment/images/')
-        for i in ['/home/raichu/Desktop/deployment/images/' + files for files in dirs]:
+        dirs = os.listdir('images/')
+        for i in ['images/' + files for files in dirs]:
             result = DeepFace.verify(frame, i, model_name="Facenet512")['verified']
 
             if result == True:
