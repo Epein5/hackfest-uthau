@@ -48,7 +48,7 @@ class MyApp extends StatelessWidget {
                 brightness: Brightness.dark,
                 primaryColor: const Color.fromARGB(255, 29, 1, 35)),
             onGenerateRoute: Routes.generateRoutes,
-            initialRoute: RouteName.homeview,
+            initialRoute: RouteName.loginview,
           );
         }));
   }

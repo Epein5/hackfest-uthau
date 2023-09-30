@@ -1,5 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/resources/components/boxes.dart';
+import 'package:flutter_application_1/utils/popupmessages.dart';
+import 'package:flutter_application_1/utils/routes/routes.dart';
 
 class BookBusView extends StatefulWidget {
   @override
@@ -61,7 +65,6 @@ class _BusBookingPageState extends State<BookBusView> {
                   // keyboardType: TextInputType.phone,
                   decoration: const InputDecoration(
                     labelText: 'Pickup Location',
-                    suffix: Text("Hr:Min"),
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -75,6 +78,7 @@ class _BusBookingPageState extends State<BookBusView> {
                   // keyboardType: TextInputType.phone,
                   decoration: const InputDecoration(
                     labelText: 'Arrival Time',
+                    suffix: Text("Hr:Min"),
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -122,19 +126,24 @@ class _BusBookingPageState extends State<BookBusView> {
                     );
                   },
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 RoundButton(
                     text: "Alert Driver and Book",
                     ontap: () {
-                      // Handle booking logic here
-                      if (passengerName.isNotEmpty &&
-                          contactNumber.isNotEmpty &&
-                          selectedSeat != -1) {
-                        print(
-                            'Booking confirmed for $passengerName. Seat Number: $selectedSeat contact number: $contactNumber Arrival Time: $Arrivaltime Pickuplocation $pickuplocation');
-                      } else {
-                        print('Please fill in all the details.');
-                      }
+                      CollectionReference ref =
+                          FirebaseFirestore.instance.collection('bus routes');
+                      ref.doc('BA 1234').set({
+                        'notification':
+                            'BOOKING for $passengerName. Number of Seat : $selectedSeat contact number: $contactNumber Arrival Time: $Arrivaltime Pickuplocation $pickuplocation'
+                      }, SetOptions(merge: true)).then((value) {
+                        PopUpMessages.snackBar(
+                            "Alert Send Successfully", context);
+                        Navigator.pushReplacementNamed(
+                            context, RouteName.homeview);
+                      }).onError((error, stackTrace) {
+                        PopUpMessages.flushBarErrorMessage(
+                            error.toString(), context);
+                      });
                     })
               ],
             ),

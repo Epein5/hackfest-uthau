@@ -1,9 +1,6 @@
-import 'dart:convert';
-import 'dart:io';
 import 'dart:math';
 import 'package:latlong2/latlong.dart';
 import 'package:open_route_service/open_route_service.dart';
-import 'package:flutter_application_1/resources/map/route_points.json';
 
 double calculateDistance(LatLng point1, LatLng point2) {
   const double radiusOfEarth = 6371; // Earth's radius in kilometers
@@ -51,7 +48,6 @@ class MAPDISTANCE {
   calculateFare(List<LatLng> routePoints) {
     final double totalDistance = calculateTotalDistance(routePoints);
     final double fare = totalDistance * 0.5;
-    print('Rs ' + fare.toString());
     return fare;
   }
 
@@ -71,14 +67,6 @@ class MAPDISTANCE {
       cstartlng,
       cendlat,
       cendlng) async {
-    late List<ORSCoordinate> routepoints;
-
-    // const double startLat = 27.717524;
-    // const double startLng = 85.324118;
-    // const double endLat = 27.727299;
-    // const double endLng = 85.324099;
-
-    // Form Route between coordinates
     final List<ORSCoordinate> arouteCoordinates =
         await client.directionsRouteCoordsGet(
       startCoordinate: ORSCoordinate(latitude: astartlat, longitude: astartlng),
@@ -95,21 +83,6 @@ class MAPDISTANCE {
       endCoordinate: ORSCoordinate(latitude: cendlat, longitude: cendlng),
     );
 
-    // // Map route coordinates to a list of LatLng
-    // final List<LatLng> aroutePoints = arouteCoordinates
-    //     .map((coordinate) => LatLng(coordinate.latitude, coordinate.longitude))
-    //     .toList();
-
-    // final List<LatLng> broutePoints = arouteCoordinates
-    //     .map((coordinate) => LatLng(coordinate.latitude, coordinate.longitude))
-    //     .toList();
-
-    // final List<LatLng> croutePoints = arouteCoordinates
-    //     .map((coordinate) => LatLng(coordinate.latitude, coordinate.longitude))
-    //     .toList();
-    // // print(routePoints);
-    // late List<LatLng> routeCoordinates; // Your original list of coordinates
-
     final List<List<LatLng>> routesList = [
       arouteCoordinates
           .map(
@@ -124,18 +97,6 @@ class MAPDISTANCE {
               (coordinate) => LatLng(coordinate.latitude, coordinate.longitude))
           .toList(),
     ];
-    print(routesList[1]);
     return routesList;
-  }
-
-  static Future<void> saveRoutePointsToFile(List<LatLng> routePoints) async {
-    final file = File(
-        r'C:\Users\PEIN\OneDrive\Desktop\KU HACK\flutter_application_1\lib\resources\map\route_points.json'); // Specify the file name and path
-
-    // Convert the route points to JSON format
-    final jsonRoutePoints = routePoints.map((point) => point.toJson()).toList();
-
-    // Write the JSON data to the file
-    await file.writeAsString(json.encode(jsonRoutePoints));
   }
 }

@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/services/MAP/distancecalc.dart';
@@ -35,8 +34,10 @@ class _ViewBusViewState extends State<ViewBusView> {
         85.43474,
         27.63130,
         85.52228,
-        27.61601,
-        85.53584,
+        // 27.61601,
+        // 85.53584,
+        27.574950,
+        85.559961,
         27.67387,
         85.43077,
         27.58442,
@@ -99,8 +100,10 @@ class _ViewBusViewState extends State<ViewBusView> {
             85.43474,
             27.63130,
             85.52228,
-            27.61601,
-            85.53584,
+            // 27.61601,
+            // 85.53584,
+            27.574950,
+            85.559961,
             27.67387,
             85.43077,
             27.58442,
@@ -122,7 +125,7 @@ class _ViewBusViewState extends State<ViewBusView> {
             final routePoints = snapshot.data;
             return SlidingUpPanel(
               minHeight: 100,
-              maxHeight: 600,
+              maxHeight: 500,
               borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(30), topRight: Radius.circular(30)),
               panel: Container(
@@ -165,44 +168,17 @@ class _ViewBusViewState extends State<ViewBusView> {
                     ),
                     const Divider(),
                     BusInfoTile(
-                      busPhoto: 'assets/bus2.png',
+                      busPhoto: 'assets/white-bus.jpeg',
                       route: "Route 456",
                       busNumber: "Bus #2",
-                      onTap: () {
-                        // Handle bus #2 tap
-                        Navigator.pushNamed(context, RouteName.bustwoview);
-                      },
+                      onTap: () {},
                     ),
                     const Divider(),
                     BusInfoTile(
-                      busPhoto: 'assets/bus3.png',
+                      busPhoto: 'assets/mayur.jpeg',
                       route: "Route 789",
                       busNumber: "Bus #3",
-                      onTap: () {
-                        // Handle bus #3 tap
-                        Navigator.pushNamed(context, RouteName.busthreeview);
-                        print('Bus #3 tapped');
-                      },
-                    ),
-                    const Divider(),
-                    BusInfoTile(
-                      busPhoto: 'assets/bus3.png',
-                      route: "Route 789",
-                      busNumber: "Bus #3",
-                      onTap: () {
-                        // Handle bus #3 tap
-                        print('Bus #3 tapped');
-                      },
-                    ),
-                    const Divider(),
-                    BusInfoTile(
-                      busPhoto: 'assets/bus3.png',
-                      route: "Route 789",
-                      busNumber: "Bus #3",
-                      onTap: () {
-                        // Handle bus #3 tap
-                        print('Bus #3 tapped');
-                      },
+                      onTap: () {},
                     ),
                   ],
                 ),
@@ -213,16 +189,15 @@ class _ViewBusViewState extends State<ViewBusView> {
                   Flexible(
                     child: FlutterMap(
                       options: MapOptions(
-                        center: const LatLng(27.64953, 85.62340),
-                        zoom: 11,
+                        center: const LatLng(27.620378, 85.553077),
+                        zoom: 12,
                       ),
                       children: [
                         TileLayer(
                           retinaMode: true,
                           urlTemplate:
-                              "https://api.maptiler.com/maps/bright/{z}/{x}/{y}.png?key=kqCtjlRJB4wFAV6MdyXS",
-
-                          // 'https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}',
+                              'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                         
                           subdomains: const ['a', 'b', 'c'],
                         ),
                         Consumer<MarkerProvider>(
@@ -240,14 +215,14 @@ class _ViewBusViewState extends State<ViewBusView> {
                                   width: 30.0,
                                   height: 30.0,
                                   point: _aanimatedLatLng,
-                                  builder: (ctx) => GestureDetector(
-                                    onTap: () {
-                                      
-                                    },
-                                    child: const Icon(
-                                      Icons.location_on,
-                                      size: 30.0,
-                                      color: Color.fromARGB(255, 0, 0, 0),
+                                  builder: (ctx) => const CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 181, 177, 177),
+                                    child: Icon(
+                                      Icons.bus_alert_sharp,
+                                      size: 20.0,
+                                      color: Colors.blue,
                                     ),
                                   ),
                                 ),
@@ -255,13 +230,14 @@ class _ViewBusViewState extends State<ViewBusView> {
                                   width: 30.0,
                                   height: 30.0,
                                   point: _banimatedLatLng,
-                                  builder: (ctx) => InkWell(
-                                    onTap: () {
-                                    },
-                                    child: const Icon(
-                                      Icons.location_on,
-                                      size: 30.0,
-                                      color: Color.fromARGB(255, 0, 0, 0),
+                                  builder: (ctx) => const CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 181, 177, 177),
+                                    child: Icon(
+                                      Icons.bus_alert_sharp,
+                                      size: 20.0,
+                                      color: Colors.white,
                                     ),
                                   ),
                                 ),
@@ -269,19 +245,40 @@ class _ViewBusViewState extends State<ViewBusView> {
                                   width: 30.0,
                                   height: 30.0,
                                   point: _canimatedLatLng,
-                                  builder: (ctx) => InkWell(
-                                    onTap: () {
-                                    },
-                                    child: const Icon(
-                                      Icons.location_on,
-                                      size: 30.0,
-                                      color: Color.fromARGB(255, 0, 0, 0),
+                                  builder: (ctx) => const CircleAvatar(
+                                    radius: 10,
+                                    backgroundColor:
+                                        Color.fromARGB(255, 181, 177, 177),
+                                    child: Icon(
+                                      Icons.bus_alert_sharp,
+                                      size: 20.0,
+                                      color: Colors.green,
                                     ),
                                   ),
                                 ),
+                                
                               ],
                             );
                           },
+                        ),
+                        MarkerLayer(
+                          markers: [
+                            Marker(
+                              width: 30.0,
+                              height: 30.0,
+                              point: const LatLng(27.617631, 85.535149),
+                              builder: (ctx) => const CircleAvatar(
+                                radius: 10,
+                                backgroundColor:
+                                    Color.fromARGB(255, 255, 255, 255),
+                                child: Icon(
+                                  Icons.location_pin,
+                                  size: 20.0,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
                         PolylineLayer(
                           polylines: [
