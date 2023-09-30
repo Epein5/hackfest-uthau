@@ -1,0 +1,114 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="description">
+        <meta http-equiv = "X-UA-Compatible" content = "IE-edge">
+        <title>Login</title>
+        <meta name = "viewport" content = "width = device-width , initial-scale = 1">
+        <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet" />
+        <link rel = "stylesheet" href = "{% static 'busapp/css/sign_in.css'%}">
+
+        
+
+        <!-- Favicon -->
+        <link href="img/favicon.ico" rel="icon">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/animate/animate.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="{% static 'busapp/css/bootstrap.min.css'%}" rel="stylesheet">
+    </head>
+    <body>
+
+        {% for message in messages %}
+        <div class = "alert alert-{{message.tag}} alert-dimissible fade show" role = "alert">
+        <strong>Message:</strong>{{message}}
+        <button type="button" class="close" data-dismiss = "alert" arial-label = "Close">
+        <span aria-hidden = "true">&times;</span>
+        </button>
+        </div>
+        
+        {% endfor %}
+        <div class="column">
+            <img src = "{% static 'bus/media/sign_in/images.jpg' %}" alt = "Deaf" style="width:713px;height:768px;">
+        </div>
+
+        <div class = "icon">
+            <div class = "img2">
+                <img src = "{% static 'loginpage/media/sign_in/icon.png' %}" alt = "Deaf" style="width:80px;height:80px;">
+            </div>
+        </div>
+
+        <i class="fa fa-bus-alt me-3"></i><span class="signbloom">Smart Transportation</span>
+        <span class="login">Login</span>
+
+        <button type = "submit" class="ggle">
+            <span class="signinggl">Sign in with Google</span>
+            <div class="google">
+                <img src = "{% static 'loginpage/media/google.png' %}" alt = "Deaf" style="width:29.77px;height:29.61px;">
+            </div>
+        </button>
+
+        <span class="or">or sign in with email</span>
+
+        <div class="line-1"></div>
+        <div class="line-2"></div>
+
+        <a href="" class="forget">Forget Password?</a>
+        <form action="/sign_in" method = "post">
+            {% csrf_token %}
+                <div class="username">
+                <label for="">Username:* </label>
+                </div>
+                <div class="username_box">
+                <input type = "text" id = "Username" name = "Username" placeholder = "Enter Username" Required>
+                </div>
+                <br>
+                <div class="password">
+                <label for="">Password:*</label>
+                </div>
+                <div class = "password_box">
+                <input type = "password" id = "Password" name = "Password" placeholder = "Enter Password" Required>
+                </div>
+                <br>
+                <button type = "submit" class = "button"><span class="v4_53">Login</span></button>  
+            </div> 
+            </form>
+
+            <label class="container"><span class="remember">Remember me</span>
+                <input type="checkbox" checked = "checked">
+                <span class = "checkmark"></span>
+            </label>
+
+            <span class="notyet">Not registered yet?<a href='signup' class="account">Create an Account</a></span>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="busapp/lib/wow/wow.min.js"></script>
+        <script src="busapp/lib/easing/easing.min.js"></script>
+        <script src="busapp/lib/waypoints/waypoints.min.js"></script>
+        <script src="busapp/lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="busapp/lib/tempusdominus/js/moment.min.js"></script>
+        <script src="busapp/lib/tempusdominus/js/moment-timezone.min.js"></script>
+        <script src="busapp/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+        <script src="{% static 'busapp/js/app.js'%}"></script>
+    </body>
+</html>
