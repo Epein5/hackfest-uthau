@@ -4,7 +4,7 @@ from Mask_detect import check_mask
 
 def recognize_face(frame):
     if check_mask(frame=frame):
-        return "Mask Detected"
+        return "Mask Detected, Please remove your mask"
     
     else:
 
@@ -13,8 +13,8 @@ def recognize_face(frame):
             result = DeepFace.verify(frame, i, model_name="Facenet512")['verified']
 
             if result == True:
-                return "Face Detected"
+                return "Your face has been recognized"
             else:
-                return "No Face Detected"
+                return "Sorry, Your face has not been recognized"
                 
             
