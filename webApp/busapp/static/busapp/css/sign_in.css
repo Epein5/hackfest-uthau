@@ -1,0 +1,284 @@
+body{
+    background-color: white;
+}
+
+.column {   
+    opacity: 0.82;
+    position: absolute;
+    top:0px;
+    left: 0px;
+}
+
+.alert {
+    width: 214px;
+    height: 47px;
+    color: #000;
+    position: absolute;
+    top: 90px;
+    left: 947px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 12px;
+    opacity: 1;
+    text-align: center;
+}
+
+
+.icon {
+    width: 80px;
+    height: 80px;
+    opacity: 1;
+    position: absolute;
+    top: 17px;
+    left: 824.11px;
+}
+
+.signbloom {
+    width: 214px;
+    height: 47px;
+    color: rgba(255,0,0,1);
+    position: absolute;
+    top: 45px;
+    left: 947px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+}
+
+.login {
+    width: 102.2px;
+    height: 48.25px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 126.84px;
+    left: 824.11px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 36px;
+    opacity: 1;
+    text-align: center;
+}
+
+.ggle {
+    width: 438px;
+    height: 51px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 188.43px;
+    left: 825.22px;
+    border: 1px solid rgba(187,187,187,1);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.signinggl {
+    width: 203.28px;
+    height: 30.8px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 11.29px;
+    left: 127.75px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+
+.google {
+    width: 27.77px;
+    height: 29.61px;
+    opacity: 1;
+    position: absolute;
+    top: 10.27px;
+    left: 88.87px;
+}
+
+.line-1 {
+    width:142.84px;
+    height: 1px;
+    background: black;
+    top: 262.52px;
+    left: 825.22px;
+    position: absolute;
+}
+
+.line-2 {
+    width:145.84px;
+    height: 1px;
+    background: black;
+    top: 262.52px;
+    left: 1120.82px;
+    position: absolute;
+}
+
+.or {
+    color: rgba(0,0,0,1);
+    position: absolute;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 11px;
+    opacity: 1;
+    text-align: left;
+    width: 161.07px;
+    height: 14.37;
+    opacity: 1;
+    top: 255.15px;
+    left: 988.52px;
+}
+
+.username {
+    width: 69px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 283.89px;
+    left: 813px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+
+.username_box {
+    width: 438.78px;
+    height: 56.46px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 315.58px;
+    left: 825.22px;
+}
+
+.password {
+    width: 114px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 393.73px;
+    left: 813px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 20px;
+    opacity: 1;
+    text-align: center;
+}
+
+.password_box {
+    width: 438.78px;
+    height: 56.46px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    top: 429.65px;
+    left: 825.22px;
+}
+
+input{
+    width: 438.78px;
+    height: 56.46px;
+    background: rgba(255,255,255,1);
+    opacity: 1;
+    position: absolute;
+    border: 1px solid rgba(187,187,187,1);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+}
+
+.button{
+    width: 438px;
+    height: 51px;
+    background: rgba(255,3,3,1);
+    opacity: 1;
+    position: absolute;
+    top: 546.67px;
+    left: 825.22px;
+    border: 1px solid rgba(255,255,255,1);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.v4_53 {
+    width: 203px;
+    color: rgba(255,255,255,1);
+    position: absolute;
+    top: 10px;
+    left: 118px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 24px;
+    opacity: 1;
+    text-align: center;
+}
+
+.remember {
+    width: 161.07px;
+    height: 18.48px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 500.48px;
+    left: 838.55px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 14px;
+    opacity: 1;
+    text-align: left;
+}
+
+.forget {
+    width: 161.07px;
+    height: 18.48px;
+    color: rgba(0,0,0,1);
+    position: absolute;
+    top: 500.48px;
+    left: 1102.93px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    font-size: 14px;
+    opacity: 1;
+    text-align: right;
+}
+
+input[type=checkbox] {
+    width: 16px;
+    height: 16px;
+    top: 498px;
+    left: 814px;
+    background: rgba(255,3,3,1);
+}
+
+.notyet {
+    width: 295px;
+    position: absolute;
+    top: 615px;
+    left: 790px;
+    font-family: DM Sans;
+    font-weight: Bold;
+    opacity: 1;
+    text-align: right;
+    font-size: 14px;
+}
+
+.account {
+    position: relative;
+    color: rgba(255,0,0,1);
+    opacity: 1;
+    text-align: right;
+    font-size: 16px;
+}
+
+
+
