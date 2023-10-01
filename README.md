@@ -31,7 +31,7 @@ We intend to improve public transportation in Nepal using AI and Machine Learnin
 
   ### Fare Based on Distance
   Leaflet, a popular javascript library used for interactive maps is used to predict the distance from point A to point B according to the route the bus took. An array of geolocation coordinates is kept as the bus moves using GPS, so the array from point A to point B is sliced, and then the leaflet is used to compute the distance from those coordinate arrays. We are using [this article](https://kathmandupost.com/national/2022/04/15/new-transport-fares-in-effect-start-at-rs20) as an reference to calculate the fare according to the distance travelled.
-  <center><img src ='https://github.com/Nawap1/Udhyam_Kripples/assets/112919863/5ed5684a-392c-4ade-a25a-089505b188d9' height=400 width=500></img></center>
+  <center><img src ='mobileApp/flutter_application_1/assets/268482228-5ed5684a-392c-4ade-a25a-089505b188d9.png' height=400 width=500></img></center>
 
   
   ### Realtime Bus Tracking
