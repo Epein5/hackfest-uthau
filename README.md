@@ -37,4 +37,4 @@ We intend to improve public transportation in Nepal using AI and Machine Learnin
   ### Realtime Bus Tracking
   Using GPS of the bus we are able to track the bus in real-time using an open street map (OSM) which will make it more accessible to the users.
   
-  ![bus_tracking](https://github.com/Nawap1/Udhyam_Kripples/assets/98960524/b99313c7-655c-4671-910a-98dcc4c9bf26)
+  ![bus_tracking](mobileApp/flutter_application_1/assets/268481844-b99313c7-655c-4671-910a-98dcc4c9bf26.png)
