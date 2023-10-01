@@ -15,6 +15,9 @@ We intend to improve public transportation in Nepal using AI and Machine Learnin
 - Mobile Application for User
 - Web Based Admin Dashboard
 
+## Demo Video Link
+[Video](https://www.youtube.com/watch?v=dNmUfVQw2wU&ab_channel=AayushGautam)
+
 ### Face Detection
   We are using the power of MobileNet for face detection. It is a lightweight high performing deep learning model used for classification and detetion of objects within the image datasets.
 
